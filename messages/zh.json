@@ -1,0 +1,11 @@
+{
+  "common": {
+    "bookAppointment": "預約看診"
+  },
+  "nav": {
+    "home": "首頁",
+    "services": "服務項目",
+    "doctors": "我們的醫師",
+    "contact": "聯絡我們"
+  }
+}

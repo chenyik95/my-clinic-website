@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: var(--font-inter);
+}
+
+body {
+  font-feature-settings: "rlig" 1, "kern" 1;
+}
+
+/* Zen Pulse Design System - Calming Medical Aesthetic */
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-2xl font-medium transition-all hover:bg-primary-dark active:scale-[0.985];
+}
+
+.btn-secondary {
+  @apply border border-secondary/20 text-secondary px-6 py-3 rounded-2xl font-medium transition-all hover:bg-secondary/5;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-border/50 transition-all hover:shadow-md;
+}
+
+.section {
+  @apply py-16 md:py-20;
+}
+
+.heading {
+  @apply text-3xl md:text-4xl font-semibold text-secondary tracking-tight;
+}

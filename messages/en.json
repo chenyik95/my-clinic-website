@@ -1,0 +1,11 @@
+{
+  "common": {
+    "bookAppointment": "Book Appointment"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "doctors": "Our Doctor",
+    "contact": "Contact"
+  }
+}
