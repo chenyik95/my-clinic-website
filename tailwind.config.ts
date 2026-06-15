@@ -9,18 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Zen Pulse - Calming Medical Palette
-        background: '#F8FAF9',
-        'card-muted': '#F0F7F6',
+        // Zen Pulse - Warm Beige Clinic Theme
+        background: '#f9f5ed',
+        'card-muted': '#f4eee3',
         primary: {
-          DEFAULT: '#2A9D8F',
-          dark: '#1F7A6E',
+          DEFAULT: '#e5d5bf',
+          dark: '#d4c3a8',
         },
-        secondary: '#264653',
-        accent: '#5BB9A6',
+        secondary: '#3a2f2a',
+        accent: '#e5d5bf',
         text: {
-          primary: '#1E2937',
-          secondary: '#475569',
+          primary: '#2c2522',
+          secondary: '#5c5148',
         },
       },
       borderRadius: {

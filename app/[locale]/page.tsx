@@ -1,17 +1,35 @@
-export default function HomePage() {
+"use client";
+
+import { useState } from "react";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { DoctorSection } from "@/components/DoctorSection";
+import { ServicesSection } from "@/components/ServicesSection";
+import { WhyUs } from "@/components/WhyUs";
+import { Testimonials } from "@/components/Testimonials";
+import { BookingDialog } from "@/components/BookingDialog";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
+
+export default function EnglishHomePage() {
+  const [bookingOpen, setBookingOpen] = useState(false);
+
   return (
-    <main className="min-h-screen">
-      <div className="container mx-auto px-6 py-20">
-        <h1 className="text-4xl font-semibold text-secondary mb-4">
-          Zen Pulse Acupuncture Medical Centre
-        </h1>
-        <p className="text-xl text-text-secondary">
-          Professional Traditional Chinese Medicine in Subang Jaya, Malaysia.
-        </p>
-        <p className="mt-8 text-sm text-text-secondary">
-          Project scaffolding complete. We will build the full site next.
-        </p>
-      </div>
-    </main>
+    <div className="min-h-screen flex flex-col">
+      <Navbar onBookClick={() => setBookingOpen(true)} />
+
+      <main className="flex-1">
+        <Hero onBookClick={() => setBookingOpen(true)} />
+        <ServicesSection />
+        <DoctorSection />
+        <WhyUs />
+        <Testimonials />
+        <ContactSection />
+      </main>
+
+      <Footer />
+
+      <BookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
+    </div>
   );
 }

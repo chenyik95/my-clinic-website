@@ -1,22 +1,54 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Zen Pulse Clinic Theme - Warm Beige */
+  --color-background: #f9f5ed;
+  --color-card-muted: #f4eee3;
+  --color-primary: #e5d5bf;
+  --color-primary-dark: #d4c3a8;
+  --color-secondary: #3a2f2a;
+  --color-accent: #e5d5bf;
+  --color-text-primary: #2c2522;
+  --color-text-secondary: #5c5148;
+  --color-border: #e0d5c4;
+
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+}
 
 :root {
   --font-sans: var(--font-inter);
+
+  /* Bridge shadcn/ui components to our warm beige clinic palette */
+  --background: var(--color-background);
+  --foreground: var(--color-text-primary);
+  --card: #ffffff;
+  --card-foreground: var(--color-text-primary);
+  --primary: var(--color-primary);
+  --primary-foreground: #2c2522; /* dark text on light beige for good contrast */
+  --secondary: var(--color-secondary);
+  --secondary-foreground: #f9f5ed;
+  --muted: var(--color-card-muted);
+  --muted-foreground: var(--color-text-secondary);
+  --accent: var(--color-accent);
+  --accent-foreground: #2c2522;
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-primary);
+  --radius: 1rem;
 }
 
 body {
   font-feature-settings: "rlig" 1, "kern" 1;
 }
 
-/* Zen Pulse Design System - Calming Medical Aesthetic */
+/* Zen Pulse Design System - Warm Beige Aesthetic */
 .btn-primary {
-  @apply bg-primary text-white px-6 py-3 rounded-2xl font-medium transition-all hover:bg-primary-dark active:scale-[0.985];
+  @apply bg-primary text-secondary px-6 py-3 rounded-2xl font-medium transition-all hover:bg-primary-dark active:scale-[0.985];
 }
 
 .btn-secondary {
-  @apply border border-secondary/20 text-secondary px-6 py-3 rounded-2xl font-medium transition-all hover:bg-secondary/5;
+  @apply border border-secondary/30 text-secondary px-6 py-3 rounded-2xl font-medium transition-all hover:bg-secondary/5;
 }
 
 .card {

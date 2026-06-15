@@ -1,11 +1,136 @@
 {
-  "common": {
-    "bookAppointment": "Book Appointment"
-  },
   "nav": {
     "home": "Home",
     "services": "Services",
     "doctors": "Our Doctor",
     "contact": "Contact"
+  },
+  "common": {
+    "bookAppointment": "Book Appointment",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us"
+  },
+  "hero": {
+    "title": "Restore Balance.\nReclaim Your Wellness.",
+    "subtitle": "Expert Traditional Chinese Medicine care by Dr. Goh Sze Chin in the heart of Subang Jaya. Gentle, personalised treatments to help you feel like yourself again.",
+    "ctaPrimary": "Book Appointment",
+    "ctaSecondary": "View Our Services"
+  },
+  "doctor": {
+    "title": "Meet Dr. Goh Sze Chin",
+    "credentials": "Registered TCM Practitioner • Ministry of Health Malaysia",
+    "bio": "With over 15 years of dedicated clinical experience, Dr. Goh Sze Chin specialises in restoring the body’s natural harmony through Traditional Chinese Medicine. Her gentle approach combines classical acupuncture, therapeutic Tuina, and customised herbal prescriptions.\n\nPatients trust Dr. Goh for her deep listening, precise diagnosis, and unwavering commitment to treating the root cause — not just the symptoms. She has helped hundreds of individuals find lasting relief from chronic pain, stress-related conditions, women’s health concerns, and general wellness imbalances.",
+    "philosophy": "\"Healing happens when we treat the person, not just the illness. Every treatment is a conversation between the body and the practitioner.\"",
+    "experience": "15+ years experience",
+    "patients": "800+ patients treated",
+    "specialties": "Pain Management • Women’s Health • Stress & Sleep • Digestive Wellness"
+  },
+  "services": {
+    "title": "Our Treatments",
+    "subtitle": "Evidence-based Traditional Chinese Medicine tailored to your unique constitution.",
+    "items": [
+      {
+        "title": "Acupuncture",
+        "description": "Fine, sterile needles placed at precise points to regulate Qi, relieve pain, and restore internal balance. Effective for headaches, back pain, arthritis, and stress."
+      },
+      {
+        "title": "Tuina Therapeutic Massage",
+        "description": "Skilful hands-on therapy combining massage, acupressure, and joint mobilisation to release muscle tension, improve circulation, and correct postural imbalances."
+      },
+      {
+        "title": "Herbal Medicine Consultation",
+        "description": "Personalised prescriptions of high-quality Chinese herbs in convenient granules or decoctions. Targeted formulas for immunity, digestion, hormonal balance, and vitality."
+      },
+      {
+        "title": "Cupping Therapy",
+        "description": "Therapeutic suction cups to improve blood flow, release fascia, and expel toxins. Excellent for sports recovery, respiratory issues, and chronic muscle pain."
+      },
+      {
+        "title": "Moxibustion",
+        "description": "Warming the meridians with premium mugwort to boost yang energy, improve circulation, and support fertility, immunity, and digestive function."
+      },
+      {
+        "title": "Facial Rejuvenation Acupuncture",
+        "description": "Cosmetic acupuncture that naturally lifts, tones, and brightens the complexion while addressing underlying stress and hormonal factors affecting skin health."
+      }
+    ]
+  },
+  "whyUs": {
+    "title": "Why Patients Choose Zen Pulse",
+    "items": [
+      {
+        "title": "Experienced & Registered",
+        "description": "15+ years of focused TCM practice. Fully registered with the Ministry of Health Malaysia."
+      },
+      {
+        "title": "Personalised Care",
+        "description": "Every treatment is tailored after a thorough consultation. No two patients receive the same protocol."
+      },
+      {
+        "title": "Calm, Healing Environment",
+        "description": "Our Subang Jaya clinic is designed to feel like a sanctuary — quiet, clean, and deeply restful."
+      },
+      {
+        "title": "Holistic & Root-Cause Focus",
+        "description": "We address the underlying imbalances that cause symptoms, not just the symptoms themselves."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What Our Patients Say",
+    "items": [
+      {
+        "quote": "After years of chronic lower back pain and seeing multiple specialists, Dr. Goh’s acupuncture and Tuina finally gave me lasting relief. I can now play with my grandchildren pain-free.",
+        "name": "Mrs. Lim, 62",
+        "role": "Retired teacher, Subang Jaya"
+      },
+      {
+        "quote": "The facial rejuvenation treatments have made such a difference — my skin looks brighter and I feel more energised. Dr. Goh is incredibly knowledgeable and gentle.",
+        "name": "Ms. Tan, 38",
+        "role": "Marketing director"
+      },
+      {
+        "quote": "I was struggling with insomnia and anxiety. The combination of acupuncture, moxibustion and custom herbs completely changed my sleep within three weeks. I’m so grateful.",
+        "name": "Mr. Ahmad, 45",
+        "role": "Engineer, USJ"
+      }
+    ]
+  },
+  "booking": {
+    "title": "Book Your Appointment",
+    "subtitle": "Take the first step toward better health. We typically respond within 2 hours during clinic hours.",
+    "form": {
+      "fullName": "Full Name",
+      "phone": "Phone Number (WhatsApp preferred)",
+      "email": "Email Address",
+      "service": "Service You're Interested In",
+      "preferredDate": "Preferred Date",
+      "preferredTime": "Preferred Time",
+      "notes": "Additional Notes or Concerns",
+      "submit": "Send Booking Request",
+      "submitting": "Sending Request..."
+    },
+    "selectService": "Select a treatment",
+    "timeOptions": [
+      "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM",
+      "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM"
+    ],
+    "successTitle": "Request Received",
+    "successMessage": "Thank you. Your appointment request has been sent. Dr. Goh’s team will contact you within 2 hours to confirm your slot.",
+    "errorMessage": "Something went wrong. Please try again or call us directly."
+  },
+  "contact": {
+    "title": "Visit Our Clinic",
+    "address": "No. 12-3, Jalan SS 15/4\n47500 Subang Jaya, Selangor, Malaysia",
+    "phone": "+60 3-5638 1122",
+    "whatsapp": "+60 12-345 6789",
+    "email": "hello@zenpulseclinic.my",
+    "hours": "Monday – Saturday: 9:00 AM – 6:00 PM\nSunday & Public Holidays: Closed",
+    "mapNote": "Free parking available behind the building. 5-minute walk from SS15 LRT station."
+  },
+  "footer": {
+    "tagline": "Restoring balance through compassionate Traditional Chinese Medicine since 2010.",
+    "copyright": "© {year} Zen Pulse Acupuncture Medical Centre. All rights reserved.",
+    "licensed": "Licensed by the Ministry of Health Malaysia"
   }
 }
