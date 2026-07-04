@@ -78,6 +78,7 @@
   },
   "testimonials": {
     "title": "What Our Patients Say",
+    "viewAllOnGoogle": "View all reviews on Google",
     "items": [
       {
         "quote": "After years of chronic lower back pain and seeing multiple specialists, Dr. Goh’s acupuncture and Tuina finally gave me lasting relief. I can now play with my grandchildren pain-free.",
@@ -98,7 +99,7 @@
   },
   "booking": {
     "title": "Book Your Appointment",
-    "subtitle": "Take the first step toward better health. We typically respond within 2 hours during clinic hours.",
+    "subtitle": "Fill in your details and we'll open WhatsApp with your booking request ready to send.",
     "form": {
       "fullName": "Full Name",
       "phone": "Phone Number (WhatsApp preferred)",
@@ -107,26 +108,28 @@
       "preferredDate": "Preferred Date",
       "preferredTime": "Preferred Time",
       "notes": "Additional Notes or Concerns",
-      "submit": "Send Booking Request",
-      "submitting": "Sending Request..."
+      "submit": "Send via WhatsApp",
+      "submitting": "Opening WhatsApp..."
     },
+    "privacyNote": "Your details will be sent to the clinic via WhatsApp. Tap Send in WhatsApp to complete your request.",
     "selectService": "Select a treatment",
     "timeOptions": [
       "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM",
       "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM"
     ],
-    "successTitle": "Request Received",
-    "successMessage": "Thank you. Your appointment request has been sent. Dr. Goh’s team will contact you within 2 hours to confirm your slot.",
-    "errorMessage": "Something went wrong. Please try again or call us directly."
+    "successTitle": "WhatsApp Opened",
+    "successMessage": "Your booking details are ready in WhatsApp. Tap Send to submit your request — our team will reply within 2 hours during clinic hours.",
+    "errorMessage": "Something went wrong. Please try again or message us on WhatsApp directly."
   },
   "contact": {
     "title": "Visit Our Clinic",
-    "address": "No. 12-3, Jalan SS 15/4\n47500 Subang Jaya, Selangor, Malaysia",
-    "phone": "+60 3-5638 1122",
-    "whatsapp": "+60 12-345 6789",
-    "email": "hello@zenpulseclinic.my",
-    "hours": "Monday – Saturday: 9:00 AM – 6:00 PM\nSunday & Public Holidays: Closed",
-    "mapNote": "Free parking available behind the building. 5-minute walk from SS15 LRT station."
+    "address": "69, Jalan USJ 10/1a\nTaipan Business Centre\n47620 Subang Jaya, Selangor, Malaysia",
+    "phone": "+60 3-5886 0506",
+    "whatsapp": "+60 3-5886 0506",
+    "email": "zenpulseacupuncture@gmail.com",
+    "hours": "Monday – Friday: 9:30 AM – 7:00 PM\nSaturday: 9:30 AM – 6:00 PM\nSunday & Public Holidays: Closed",
+    "mapNote": "Located in Taipan Business Centre, USJ 10.",
+    "openInGoogleMaps": "Open in Google Maps"
   },
   "footer": {
     "tagline": "Restoring balance through compassionate Traditional Chinese Medicine since 2010.",

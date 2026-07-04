@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { CLINIC } from "@/lib/clinic";
 
 export function ContactSection() {
   const t = useTranslations("contact");
@@ -31,8 +32,8 @@ export function ContactSection() {
               </div>
               <div>
                 <div className="font-medium text-secondary mb-1.5">WhatsApp</div>
-                <a href={`https://wa.me/${t("whatsapp").replace(/[^0-9]/g, "")}`} target="_blank" className="text-text-secondary hover:text-primary transition-colors">
-                  {t("whatsapp")}
+                <a href={`https://wa.me/${CLINIC.whatsapp}`} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-primary transition-colors">
+                  {CLINIC.whatsappDisplay}
                 </a>
               </div>
               <div>
@@ -47,14 +48,24 @@ export function ContactSection() {
               </div>
             </div>
 
-            <p className="text-sm text-text-secondary pt-2">{t("mapNote")}</p>
+            <p className="text-sm text-text-secondary pt-2">
+              {t("mapNote")}{" "}
+              <a
+                href={CLINIC.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-4 hover:text-secondary transition-colors"
+              >
+                {t("openInGoogleMaps")}
+              </a>
+            </p>
           </div>
 
           {/* Map */}
           <div className="rounded-3xl overflow-hidden border border-border/50 shadow-sm aspect-video lg:aspect-auto bg-white">
             <iframe
               title="Zen Pulse Clinic Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.732!2d101.588!3d3.082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMDQnNTMuNiJOIDEwMcKwMzUnMTYuOCJF!5e0!3m2!1sen!2smy!4v1700000000000"
+              src={CLINIC.googleMapsEmbedUrl}
               width="100%"
               height="100%"
               style={{ border: 0 }}

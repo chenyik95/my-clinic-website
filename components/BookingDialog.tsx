@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { format, addDays } from "date-fns";
+import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
@@ -41,7 +41,7 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { bookingSchema, type BookingFormValues, SERVICE_OPTIONS } from "@/lib/booking-schema";
-import { bookAppointment } from "@/app/actions";
+import { buildBookingWhatsAppUrl } from "@/lib/whatsapp-booking";
 
 interface BookingDialogProps {
   open: boolean;
@@ -50,7 +50,6 @@ interface BookingDialogProps {
 
 export function BookingDialog({ open, onOpenChange }: BookingDialogProps) {
   const t = useTranslations("booking");
-  const tCommon = useTranslations("common");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<BookingFormValues>({
@@ -67,25 +66,19 @@ export function BookingDialog({ open, onOpenChange }: BookingDialogProps) {
 
   const services = [...SERVICE_OPTIONS];
 
-  async function onSubmit(values: BookingFormValues) {
+  function onSubmit(values: BookingFormValues) {
     setIsSubmitting(true);
 
-    const result = await bookAppointment(values);
+    const whatsappUrl = buildBookingWhatsAppUrl(values);
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
 
     setIsSubmitting(false);
-
-    if (result.success) {
-      toast.success(t("successTitle"), {
-        description: t("successMessage"),
-        duration: 6000,
-      });
-      form.reset();
-      onOpenChange(false);
-    } else {
-      toast.error(tCommon("bookAppointment"), {
-        description: result.message || t("errorMessage"),
-      });
-    }
+    toast.success(t("successTitle"), {
+      description: t("successMessage"),
+      duration: 6000,
+    });
+    form.reset();
+    onOpenChange(false);
   }
 
   // Disable past dates
@@ -268,7 +261,7 @@ export function BookingDialog({ open, onOpenChange }: BookingDialogProps) {
                   {isSubmitting ? t("form.submitting") : t("form.submit")}
                 </Button>
                 <p className="text-center text-xs text-text-secondary mt-3">
-                  We respect your privacy. Your information is only used to arrange your appointment.
+                  {t("privacyNote")}
                 </p>
               </div>
             </form>
