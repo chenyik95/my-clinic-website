@@ -1,63 +1,97 @@
 import { CLINIC } from "@/lib/clinic";
 import {
   getStaticTestimonials,
-  type GoogleReviewsSummary,
   type Testimonial,
   type TestimonialsData,
 } from "@/lib/testimonials";
 
-type GooglePlaceReview = {
-  rating?: number;
-  text?: { text?: string };
-  relativePublishTimeDescription?: string;
-  authorAttribution?: {
-    displayName?: string;
+type ScrapedReview = {
+  review?: {
+    rating?: number;
+    text?: string | null;
+  };
+  author?: {
+    name?: string;
+  };
+  time?: {
+    published?: string;
   };
 };
 
-type GooglePlaceResponse = {
-  reviews?: GooglePlaceReview[];
-  rating?: number;
-  userRatingCount?: number;
-  googleMapsUri?: string;
-};
+const DISPLAY_COUNT = 3;
+const SCRAPE_PAGES = 2;
 
-type GoogleTextSearchResponse = {
-  places?: Array<{ id?: string }>;
-};
+function ratingOnlyQuote(rating: number): string {
+  return `Shared a ${rating}-star review on Google`;
+}
 
-const REVALIDATE_SECONDS = 60 * 60 * 24; // 24 hours
+function mapScrapedReviews(reviews: ScrapedReview[]): TestimonialsData {
+  const sorted = [...reviews].sort((a, b) => {
+    const aHasText = Boolean(a.review?.text?.trim());
+    const bHasText = Boolean(b.review?.text?.trim());
+    if (aHasText !== bHasText) return aHasText ? -1 : 1;
+    return (b.review?.rating ?? 0) - (a.review?.rating ?? 0);
+  });
 
-function mapGoogleReviews(data: GooglePlaceResponse): TestimonialsData {
-  const items: Testimonial[] = (data.reviews ?? [])
-    .filter((review) => review.text?.text)
-    .map((review) => ({
-      quote: review.text!.text!,
-      name: review.authorAttribution?.displayName ?? "Google Reviewer",
-      role: review.relativePublishTimeDescription ?? "Google Review",
-      rating: review.rating,
+  const items: Testimonial[] = sorted.slice(0, DISPLAY_COUNT).map((review) => {
+    const rating = review.review?.rating ?? 5;
+    const text = review.review?.text?.trim();
+
+    return {
+      quote: text || ratingOnlyQuote(rating),
+      name: review.author?.name ?? "Google Reviewer",
+      role: review.time?.published ?? "Google Review",
+      rating,
       source: "google" as const,
-    }));
+    };
+  });
 
-  const summary: GoogleReviewsSummary | undefined =
-    data.rating != null || data.userRatingCount != null || data.googleMapsUri
-      ? {
-          rating: data.rating,
-          userRatingCount: data.userRatingCount,
-          googleMapsUri: data.googleMapsUri ?? CLINIC.googleMapsUrl,
-        }
+  const ratings = reviews
+    .map((review) => review.review?.rating)
+    .filter((rating): rating is number => rating != null);
+
+  const averageRating =
+    ratings.length > 0
+      ? ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length
       : undefined;
 
   return {
     source: "google",
     items,
-    summary,
+    summary: {
+      rating: averageRating,
+      userRatingCount: reviews.length,
+      googleMapsUri: CLINIC.googleMapsUrl,
+    },
   };
 }
 
-async function resolvePlaceId(apiKey: string): Promise<string | null> {
+async function scrapeGoogleReviews(): Promise<TestimonialsData | null> {
   try {
-    const response = await fetch(
+    const { scraper } = await import("google-maps-review-scraper");
+    const reviews = (await scraper(CLINIC.googleMapsPlaceUrl, {
+      pages: SCRAPE_PAGES,
+      clean: true,
+      experimental: true,
+      sort_type: "newest",
+    })) as ScrapedReview[] | number;
+
+    if (!Array.isArray(reviews) || reviews.length === 0) {
+      return null;
+    }
+
+    return mapScrapedReviews(reviews);
+  } catch (error) {
+    console.error("Failed to scrape Google reviews:", error);
+    return null;
+  }
+}
+
+async function fetchGooglePlacesReviews(
+  apiKey: string
+): Promise<TestimonialsData | null> {
+  try {
+    const searchResponse = await fetch(
       "https://places.googleapis.com/v1/places:searchText",
       {
         method: "POST",
@@ -78,41 +112,20 @@ async function resolvePlaceId(apiKey: string): Promise<string | null> {
             },
           },
         }),
-        next: { revalidate: REVALIDATE_SECONDS * 30 },
+        cache: "no-store",
       }
     );
 
-    if (!response.ok) {
-      console.error(
-        `Google Text Search error: ${response.status} ${response.statusText}`
-      );
-      return null;
-    }
+    if (!searchResponse.ok) return null;
 
-    const data = (await response.json()) as GoogleTextSearchResponse;
-    return data.places?.[0]?.id ?? null;
-  } catch (error) {
-    console.error("Failed to resolve Google Place ID:", error);
-    return null;
-  }
-}
+    const searchData = (await searchResponse.json()) as {
+      places?: Array<{ id?: string }>;
+    };
+    const placeId =
+      process.env.GOOGLE_PLACE_ID ?? searchData.places?.[0]?.id ?? null;
+    if (!placeId) return null;
 
-export async function getTestimonials(): Promise<TestimonialsData> {
-  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
-
-  if (!apiKey) {
-    return getStaticTestimonials();
-  }
-
-  const placeId =
-    process.env.GOOGLE_PLACE_ID ?? (await resolvePlaceId(apiKey));
-
-  if (!placeId) {
-    return getStaticTestimonials();
-  }
-
-  try {
-    const response = await fetch(
+    const detailsResponse = await fetch(
       `https://places.googleapis.com/v1/places/${placeId}`,
       {
         headers: {
@@ -120,27 +133,65 @@ export async function getTestimonials(): Promise<TestimonialsData> {
           "X-Goog-Api-Key": apiKey,
           "X-Goog-FieldMask": "reviews,rating,userRatingCount,googleMapsUri",
         },
-        next: { revalidate: REVALIDATE_SECONDS },
+        cache: "no-store",
       }
     );
 
-    if (!response.ok) {
-      console.error(
-        `Google Places API error: ${response.status} ${response.statusText}`
-      );
-      return getStaticTestimonials();
-    }
+    if (!detailsResponse.ok) return null;
 
-    const data = (await response.json()) as GooglePlaceResponse;
-    const testimonials = mapGoogleReviews(data);
+    const data = (await detailsResponse.json()) as {
+      reviews?: Array<{
+        rating?: number;
+        text?: { text?: string };
+        relativePublishTimeDescription?: string;
+        authorAttribution?: { displayName?: string };
+      }>;
+      rating?: number;
+      userRatingCount?: number;
+      googleMapsUri?: string;
+    };
 
-    if (testimonials.items.length === 0) {
-      return getStaticTestimonials();
-    }
+    const reviews = data.reviews ?? [];
+    if (reviews.length === 0) return null;
 
-    return testimonials;
+    const items: Testimonial[] = reviews.slice(0, DISPLAY_COUNT).map((review) => {
+      const rating = review.rating ?? 5;
+      const text = review.text?.text?.trim();
+
+      return {
+        quote: text || ratingOnlyQuote(rating),
+        name: review.authorAttribution?.displayName ?? "Google Reviewer",
+        role: review.relativePublishTimeDescription ?? "Google Review",
+        rating,
+        source: "google" as const,
+      };
+    });
+
+    return {
+      source: "google",
+      items,
+      summary: {
+        rating: data.rating,
+        userRatingCount: data.userRatingCount,
+        googleMapsUri: data.googleMapsUri ?? CLINIC.googleMapsUrl,
+      },
+    };
   } catch (error) {
-    console.error("Failed to fetch Google reviews:", error);
-    return getStaticTestimonials();
+    console.error("Failed to fetch Google Places reviews:", error);
+    return null;
   }
+}
+
+export async function getTestimonials(): Promise<TestimonialsData> {
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+
+  if (apiKey) {
+    const placesReviews = await fetchGooglePlacesReviews(apiKey);
+    if (placesReviews) return placesReviews;
+  }
+
+  const scrapedReviews = await scrapeGoogleReviews();
+  if (scrapedReviews) return scrapedReviews;
+
+  return getStaticTestimonials();
 }

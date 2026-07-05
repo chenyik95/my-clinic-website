@@ -3,6 +3,9 @@ export const CLINIC = {
   whatsapp: "60358860506",
   whatsappDisplay: "+60 3-5886 0506",
   googleMapsUrl: "https://maps.app.goo.gl/B54LFjrm8hpRTNLd7",
+  // Full place URL required by the Google reviews scraper
+  googleMapsPlaceUrl:
+    "https://www.google.com/maps/place/Zen+Pulse+Acupuncture+Medical+Centre/@3.0502297,101.5838565,17z/data=!4m6!3m5!1s0x31cc4de90622b88d:0x9f59e0f14b65fe76!8m2!3d3.0502297!4d101.5838565!16s%2Fg%2F11ylxtcwrc",
   coordinates: {
     lat: 3.0502297,
     lng: 101.5838565,

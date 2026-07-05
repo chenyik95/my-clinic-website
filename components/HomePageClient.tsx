@@ -11,13 +11,8 @@ import { BookingDialog } from "@/components/BookingDialog";
 import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import type { TestimonialsData } from "@/lib/testimonials";
 
-type HomePageClientProps = {
-  testimonials: TestimonialsData;
-};
-
-export function HomePageClient({ testimonials }: HomePageClientProps) {
+export function HomePageClient() {
   const [bookingOpen, setBookingOpen] = useState(false);
 
   return (
@@ -29,7 +24,7 @@ export function HomePageClient({ testimonials }: HomePageClientProps) {
         <ServicesSection />
         <DoctorSection />
         <WhyUs />
-        <Testimonials data={testimonials} />
+        <Testimonials />
         <ContactSection />
       </main>
 
