@@ -1,11 +1,18 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { DM_Sans, Lora } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
 
-const inter = Inter({ 
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-dm-sans',
+  weight: ['400', '500', '600'],
+});
+
+const lora = Lora({
+  subsets: ['latin'],
+  variable: '--font-lora',
+  weight: ['500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -25,13 +32,10 @@ export const metadata: Metadata = {
     "women's health acupuncture",
   ],
   authors: [{ name: "Zen Pulse Acupuncture Medical Centre" }],
-  icons: {
-    icon: "/favicon.ico",
-  },
   openGraph: {
     title: "Zen Pulse Acupuncture Medical Centre",
     description: "Expert Traditional Chinese Medicine by Dr. Goh Sze Chin in Subang Jaya. Calm, personalised care for pain, stress, and holistic wellness.",
-    images: [{ url: "/images/hero.jpg" }],
+    images: [{ url: "/images/logo.jpg" }],
   },
 };
 
@@ -41,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${dmSans.variable} ${lora.variable}`}>
       <body className="font-sans antialiased bg-background text-text-primary">
         {children}
         <Toaster position="top-center" richColors closeButton />

@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { ClinicLogo } from "@/components/ClinicLogo";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -42,10 +42,7 @@ export function Navbar({ onBookClick }: NavbarProps) {
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-semibold text-xl text-secondary">
-          <span className="text-primary">Zen</span> Pulse
-        </Link>
+        <ClinicLogo size="sm" showName />
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8 text-sm">

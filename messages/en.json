@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "services": "Services",
-    "doctors": "Our Doctor",
+    "doctors": "Our Doctors",
     "contact": "Contact"
   },
   "common": {
@@ -16,14 +16,41 @@
     "ctaPrimary": "Book Appointment",
     "ctaSecondary": "View Our Services"
   },
-  "doctor": {
-    "title": "Meet Dr. Goh Sze Chin",
-    "credentials": "Registered TCM Practitioner • Ministry of Health Malaysia",
-    "bio": "With over 15 years of dedicated clinical experience, Dr. Goh Sze Chin specialises in restoring the body’s natural harmony through Traditional Chinese Medicine. Her gentle approach combines classical acupuncture, therapeutic Tuina, and customised herbal prescriptions.\n\nPatients trust Dr. Goh for her deep listening, precise diagnosis, and unwavering commitment to treating the root cause — not just the symptoms. She has helped hundreds of individuals find lasting relief from chronic pain, stress-related conditions, women’s health concerns, and general wellness imbalances.",
-    "philosophy": "\"Healing happens when we treat the person, not just the illness. Every treatment is a conversation between the body and the practitioner.\"",
-    "experience": "15+ years experience",
-    "patients": "800+ patients treated",
-    "specialties": "Pain Management • Women’s Health • Stress & Sleep • Digestive Wellness"
+  "doctors": {
+    "title": "Meet Our Doctors",
+    "subtitle": "Experienced practitioners dedicated to restoring balance through Traditional Chinese Medicine.",
+    "experienceLabel": "Clinical practice",
+    "patientsLabel": "Across Malaysia",
+    "specialtiesLabel": "Specialties",
+    "goh": {
+      "name": "Dr. Goh Sze Chin",
+      "credentials": "Registered TCM Practitioner • Ministry of Health Malaysia",
+      "bio": "With over 15 years of dedicated clinical experience, Dr. Goh Sze Chin specialises in restoring the body’s natural harmony through Traditional Chinese Medicine. Her gentle approach combines classical acupuncture, therapeutic Tuina, and customised herbal prescriptions.\n\nPatients trust Dr. Goh for her deep listening, precise diagnosis, and unwavering commitment to treating the root cause — not just the symptoms. She has helped hundreds of individuals find lasting relief from chronic pain, stress-related conditions, women’s health concerns, and general wellness imbalances.",
+      "philosophy": "\"Healing happens when we treat the person, not just the illness. Every treatment is a conversation between the body and the practitioner.\"",
+      "experience": "15+ years experience",
+      "patients": "800+ patients treated",
+      "specialties": "Pain Management • Women’s Health • Stress & Sleep • Digestive Wellness"
+    },
+    "kow": {
+      "name": "Dr. Kow Jaw Lin",
+      "credentials": "Beijing University of Chinese Medicine • Registered TCM Practitioner • Ministry of Health Malaysia",
+      "bio": "Dr. Kow Jaw Lin brings roughly 20 years of dedicated clinical expertise to the Subang Jaya community. A graduate of the esteemed Beijing University of Chinese Medicine, he possesses a profound understanding of traditional healing techniques paired with decades of practical, hands-on patient care.\n\nWhether you are an athlete recovering from a setback or someone struggling with chronic stomach issues, Dr. Kow combines classical TCM with focused, personalised treatment plans to help you restore balance and lasting wellness.",
+      "experience": "20+ years experience",
+      "specialtyItems": [
+        {
+          "title": "Sports Injuries & Rehab",
+          "description": "Accelerating recovery, reducing inflammation, and getting you back to peak performance."
+        },
+        {
+          "title": "Advanced Pain Management",
+          "description": "Targeted relief for chronic joint, muscle, and nerve pain."
+        },
+        {
+          "title": "Digestive Wellness",
+          "description": "Restoring gut health, improving digestion, and treating issues like bloating and acid reflux through holistic body balancing."
+        }
+      ]
+    }
   },
   "services": {
     "title": "Our Treatments",

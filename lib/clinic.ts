@@ -1,5 +1,7 @@
 export const CLINIC = {
   name: "Zen Pulse Acupuncture Medical Centre",
+  logoSrc: "/images/logo.jpg",
+  iconSrc: "/images/icon.jpg",
   whatsapp: "60358860506",
   whatsappDisplay: "+60 3-5886 0506",
   googleMapsUrl: "https://maps.app.goo.gl/B54LFjrm8hpRTNLd7",

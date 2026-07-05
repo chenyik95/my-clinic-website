@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { ClinicLogo } from "@/components/ClinicLogo";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -11,8 +12,8 @@ export function Footer() {
       <div className="container mx-auto px-6 text-sm">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-y-6">
           <div>
-            <div className="font-semibold tracking-tight text-secondary">Zen Pulse</div>
-            <p className="mt-2 max-w-md text-text-secondary">{t("tagline")}</p>
+            <ClinicLogo size="md" showName href="/" />
+            <p className="mt-3 max-w-md text-text-secondary">{t("tagline")}</p>
           </div>
 
           <div className="text-text-secondary space-y-1 md:text-right">
