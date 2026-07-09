@@ -15,8 +15,17 @@ export const bookingSchema = z.object({
   phone: z
     .string()
     .min(8, "Please enter a valid phone number")
-    .regex(/^(\+?6?0?1?\d{7,10}|\+?6?0?3?\d{7,8})$/, "Please enter a valid Malaysian phone number"),
-  email: z.string().email("Please enter a valid email address"),
+    .regex(
+      /^(\+?6?0?1?\d{7,10}|\+?6?0?3?\d{7,8})$/,
+      "Please enter a valid Malaysian phone number"
+    ),
+  // Optional — booking is completed via WhatsApp
+  email: z
+    .string()
+    .trim()
+    .refine((val) => val === "" || z.string().email().safeParse(val).success, {
+      message: "Please enter a valid email address",
+    }),
   service: z.enum(SERVICE_OPTIONS, {
     required_error: "Please select a service",
   }),

@@ -9,7 +9,8 @@ export async function GET() {
 
   return NextResponse.json(testimonials, {
     headers: {
-      "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+      // Shorter cache so refreshed Google comments appear sooner
+      "Cache-Control": "public, s-maxage=300, stale-while-revalidate=3600",
     },
   });
 }

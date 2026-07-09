@@ -9,15 +9,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Zen Pulse - Warm Beige Clinic Theme
-        background: '#f9f5ed',
-        'card-muted': '#f4eee3',
-        primary: {
-          DEFAULT: '#e5d5bf',
-          dark: '#d4c3a8',
+        // Zen Pulse — Dual Beige Pairing
+        // Pairing 1: Soft cream & sand beige
+        background: '#f7f2ea',
+        'card-muted': '#efe6d8',
+        beige: {
+          DEFAULT: '#e4d4be',
+          dark: '#c9b498',
         },
-        secondary: '#3a2f2a',
-        accent: '#e5d5bf',
+        // Pairing 2: Taupe beige & mocha
+        mocha: {
+          DEFAULT: '#6b5544',
+          dark: '#534233',
+          light: '#f3ebe0',
+          muted: '#d9ccb8',
+          soft: '#8a7360',
+        },
+        primary: {
+          DEFAULT: '#6b5544',
+          dark: '#534233',
+        },
+        secondary: '#3d3229',
+        accent: '#e4d4be',
         text: {
           primary: '#2c2522',
           secondary: '#5c5148',

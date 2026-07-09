@@ -10,6 +10,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const navLinks = [
   { href: "#services", key: "services" as const },
   { href: "#doctor", key: "doctors" as const },
+  { href: "#gallery", key: "gallery" as const },
   { href: "#contact", key: "contact" as const },
 ];
 
@@ -40,24 +41,24 @@ export function Navbar({ onBookClick }: NavbarProps) {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
-      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
-        <ClinicLogo size="sm" showName />
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-mocha-muted shadow-sm">
+      <div className="container mx-auto flex h-16 items-center justify-between gap-3 px-6">
+        <ClinicLogo size="sm" showName className="min-w-0 flex-1 md:flex-none" />
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8 text-sm">
+        <div className="hidden shrink-0 md:flex items-center gap-6 lg:gap-8 text-sm">
           {navLinks.map((link) => (
             <button
               key={link.key}
               onClick={() => scrollTo(link.href)}
-              className="text-text-secondary hover:text-secondary transition-colors font-medium"
+              className="text-text-secondary hover:text-mocha transition-colors font-medium"
             >
               {t(link.key)}
             </button>
           ))}
           <Button 
             onClick={onBookClick}
-            className="bg-primary hover:bg-primary-dark text-secondary rounded-2xl px-6"
+            className="rounded-2xl px-6"
           >
             {tCommon("bookAppointment")}
           </Button>
@@ -77,7 +78,7 @@ export function Navbar({ onBookClick }: NavbarProps) {
                   <button
                     key={link.key}
                     onClick={() => scrollTo(link.href)}
-                    className="text-left text-lg text-text-secondary hover:text-secondary transition-colors font-medium py-1"
+                    className="text-left text-lg text-text-secondary hover:text-mocha transition-colors font-medium py-1"
                   >
                     {t(link.key)}
                   </button>
@@ -87,7 +88,7 @@ export function Navbar({ onBookClick }: NavbarProps) {
                     setIsOpen(false);
                     onBookClick();
                   }}
-                  className="mt-4 bg-primary hover:bg-primary-dark text-secondary rounded-2xl h-11"
+                  className="mt-4 rounded-2xl h-11"
                 >
                   {tCommon("bookAppointment")}
                 </Button>

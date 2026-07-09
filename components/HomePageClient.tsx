@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { DoctorSection } from "@/components/DoctorSection";
+import { GallerySection } from "@/components/GallerySection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { WhyUs } from "@/components/WhyUs";
 import { Testimonials } from "@/components/Testimonials";
@@ -26,6 +27,7 @@ export function HomePageClient() {
         <WhyUs />
         <Testimonials />
         <ContactSection />
+        <GallerySection />
       </main>
 
       <Footer />

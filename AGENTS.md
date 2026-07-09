@@ -4,7 +4,7 @@ You are helping me build a professional medical clinic website **in Malaysia**.
 
 ## Core Requirements
 - Use **Next.js 15 + TypeScript + Tailwind CSS + shadcn/ui**
-- Calming medical design (soft blue & green tones)
+- Calming medical design (dual beige pairing: cream/sand + taupe/mocha)
 - Must be **bilingual** (English + Traditional Chinese)
 - Focus on **clean, trustworthy, and modern** design
 - **Always use Plan Mode** for major changes

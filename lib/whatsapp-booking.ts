@@ -1,9 +1,13 @@
-import { format } from "date-fns";
+import { format, startOfDay } from "date-fns";
 import { CLINIC } from "@/lib/clinic";
 import type { BookingFormValues } from "@/lib/booking-schema";
 
 export function buildBookingWhatsAppMessage(data: BookingFormValues): string {
-  const formattedDate = format(data.preferredDate, "EEEE, MMMM dd, yyyy");
+  // Normalize so formatting always uses the local calendar day
+  const formattedDate = format(
+    startOfDay(data.preferredDate),
+    "EEEE, MMMM dd, yyyy"
+  );
 
   const lines = [
     `Hello ${CLINIC.name},`,
@@ -12,11 +16,17 @@ export function buildBookingWhatsAppMessage(data: BookingFormValues): string {
     "",
     `*Name:* ${data.fullName}`,
     `*Phone:* ${data.phone}`,
-    `*Email:* ${data.email}`,
+  ];
+
+  if (data.email?.trim()) {
+    lines.push(`*Email:* ${data.email.trim()}`);
+  }
+
+  lines.push(
     `*Service:* ${data.service}`,
     `*Preferred Date:* ${formattedDate}`,
-    `*Preferred Time:* ${data.preferredTime}`,
-  ];
+    `*Preferred Time:* ${data.preferredTime}`
+  );
 
   if (data.notes?.trim()) {
     lines.push(`*Notes:* ${data.notes.trim()}`);

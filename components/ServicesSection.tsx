@@ -18,25 +18,25 @@ export function ServicesSection() {
   const services = t.raw("items") as Array<{ title: string; description: string }>;
 
   return (
-    <section id="services" className="section">
+    <section id="services" className="section section-cool">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mb-12">
           <h2 className="heading">{t("title")}</h2>
-          <p className="mt-4 text-lg text-text-secondary">{t("subtitle")}</p>
+          <p className="lead mt-3 max-w-xl">{t("subtitle")}</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => {
             const Icon = icons[index % icons.length];
             return (
-              <div key={index} className="card p-8 group">
-                <div className="w-11 h-11 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/15 transition-colors">
-                  <Icon className="w-5 h-5 text-primary" />
+              <div key={index} className="card p-7 group">
+                <div className="icon-badge mb-5">
+                  <Icon className="w-5 h-5 text-mocha" />
                 </div>
-                <h3 className="font-semibold text-xl text-secondary tracking-tight mb-3">
+                <h3 className="card-title mb-2.5">
                   {service.title}
                 </h3>
-                <p className="text-[15px] leading-relaxed text-text-secondary">
+                <p className="text-sm leading-relaxed text-text-secondary sm:text-[0.9375rem]">
                   {service.description}
                 </p>
               </div>

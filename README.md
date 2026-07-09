@@ -104,9 +104,10 @@ my-clinic-website/
 
 ## Color Theme
 
-The site uses the clinic's signature warm beige as the primary color:
+The site uses a dual beige pairing (no cool blue):
 
-- **Primary**: `#e5d5bf`
+- **Pairing 1 — Soft cream & sand**: background `#f7f2ea`, sand beige `#e4d4be`
+- **Pairing 2 — Taupe & mocha**: borders `#d9ccb8`, primary mocha `#6b5544`
 - Full palette is defined in `app/globals.css` under `@theme`.
 
 ## Deployment

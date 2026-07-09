@@ -1,16 +1,37 @@
 @import "tailwindcss";
 
 @theme {
-  /* Zen Pulse Clinic Theme - Warm Beige */
-  --color-background: #f9f5ed;
-  --color-card-muted: #f4eee3;
-  --color-primary: #e5d5bf;
-  --color-primary-dark: #d4c3a8;
-  --color-secondary: #3a2f2a;
-  --color-accent: #e5d5bf;
+  /*
+   * Zen Pulse — Dual Beige Pairing
+   *
+   * Pairing 1 · Soft Cream & Sand Beige
+   *   Light ivory surfaces + warm sand accents (calm, open, clinic-soft)
+   *
+   * Pairing 2 · Taupe Beige & Mocha
+   *   Deeper taupe borders + mocha brown for CTAs, links, icons
+   *   (warm, grounded, pairs with cream instead of cool blue)
+   */
+  --color-background: #f7f2ea;
+  --color-surface-warm: #efe6d8;
+  --color-beige: #e4d4be;
+  --color-beige-dark: #c9b498;
+
+  --color-mocha: #6b5544;
+  --color-mocha-dark: #534233;
+  --color-mocha-light: #f3ebe0;
+  --color-mocha-muted: #d9ccb8;
+  --color-mocha-soft: #8a7360;
+
+  --color-primary: #6b5544;
+  --color-primary-dark: #534233;
+  --color-card-muted: #efe6d8;
+  --color-secondary: #3d3229;
+  --color-accent: #e4d4be;
   --color-text-primary: #2c2522;
   --color-text-secondary: #5c5148;
-  --color-border: #e0d5c4;
+  --color-border: #d9ccb8;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #2c2522;
 
   --radius-2xl: 1rem;
   --radius-3xl: 1.5rem;
@@ -23,47 +44,62 @@
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-lora), ui-serif, Georgia, serif;
 
-  /* Bridge shadcn/ui components to our warm beige clinic palette */
+  /* shadcn/ui bridge */
   --background: var(--color-background);
   --foreground: var(--color-text-primary);
   --card: #ffffff;
   --card-foreground: var(--color-text-primary);
-  --primary: var(--color-primary);
-  --primary-foreground: #2c2522; /* dark text on light beige for good contrast */
+  --popover: #ffffff;
+  --popover-foreground: var(--color-text-primary);
+  --primary: var(--color-mocha);
+  --primary-foreground: #faf6f0;
   --secondary: var(--color-secondary);
-  --secondary-foreground: #f9f5ed;
-  --muted: var(--color-card-muted);
+  --secondary-foreground: #f7f2ea;
+  --muted: var(--color-mocha-light);
   --muted-foreground: var(--color-text-secondary);
-  --accent: var(--color-accent);
-  --accent-foreground: #2c2522;
-  --border: var(--color-border);
-  --input: var(--color-border);
-  --ring: var(--color-primary);
+  --accent: var(--color-beige);
+  --accent-foreground: var(--color-secondary);
+  --border: var(--color-mocha-muted);
+  --input: var(--color-mocha-muted);
+  --ring: var(--color-mocha);
   --radius: 1rem;
 }
 
+/*
+ * Elegant clinic type scale (base 16px)
+ * Body 16 · lead 18 · section 28–32 · display 32–44
+ * Slightly open tracking on serif headings feels calmer than ultra-tight display type.
+ */
 body {
   font-feature-settings: "rlig" 1, "kern" 1;
-  line-height: 1.65;
+  font-size: 1rem; /* 16px — comfortable, accessible body */
+  line-height: 1.7;
+  letter-spacing: 0.01em;
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--font-serif);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
-/* Zen Pulse Design System - Warm Beige Aesthetic */
-.btn-primary {
-  @apply bg-primary text-secondary px-6 py-3 rounded-2xl font-medium transition-all hover:bg-primary-dark active:scale-[0.985];
+/* Section backgrounds — alternate cream beige & soft taupe beige */
+.section-warm {
+  @apply bg-background;
 }
 
-.btn-secondary {
-  @apply border border-secondary/30 text-secondary px-6 py-3 rounded-2xl font-medium transition-all hover:bg-secondary/5;
+.section-cool {
+  @apply bg-mocha-light;
 }
 
-.card {
-  @apply bg-white rounded-2xl shadow-sm border border-border/50 transition-all hover:shadow-md;
+.section-white {
+  @apply bg-white;
+}
+
+.section-accent {
+  @apply bg-surface-warm;
 }
 
 .section {
@@ -71,5 +107,54 @@ h3 {
 }
 
 .heading {
-  @apply font-serif text-3xl md:text-4xl font-semibold text-secondary tracking-tight;
+  @apply font-serif text-[1.75rem] md:text-[2rem] font-medium text-secondary tracking-tight;
+}
+
+.lead {
+  @apply text-[0.9375rem] md:text-base text-text-secondary leading-relaxed;
+}
+
+.card-title {
+  @apply font-semibold text-lg text-secondary tracking-tight;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-2xl font-medium transition-all hover:bg-primary-dark active:scale-[0.985] shadow-sm;
+}
+
+.btn-secondary {
+  @apply border border-mocha/30 text-mocha px-6 py-3 rounded-2xl font-medium transition-all hover:bg-mocha-light;
+}
+
+/* Cards & forms */
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-mocha-muted/70 transition-all hover:shadow-md hover:border-mocha/20;
+}
+
+.form-surface {
+  @apply bg-white rounded-3xl border border-mocha-muted shadow-sm;
+}
+
+.icon-badge {
+  @apply w-11 h-11 rounded-2xl bg-mocha/10 flex items-center justify-center transition-colors group-hover:bg-mocha/15;
+}
+
+.icon-badge-sm {
+  @apply w-9 h-9 rounded-xl bg-mocha/10 flex items-center justify-center shrink-0;
+}
+
+/* Hero background — subtle Ken Burns zoom */
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+.hero-bg-image {
+  animation: hero-zoom 28s ease-in-out infinite alternate;
+  will-change: transform;
 }

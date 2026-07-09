@@ -3,6 +3,7 @@
     "home": "Home",
     "services": "Services",
     "doctors": "Our Doctors",
+    "gallery": "Gallery",
     "contact": "Contact"
   },
   "common": {
@@ -12,7 +13,7 @@
   },
   "hero": {
     "title": "Restore Balance.\nReclaim Your Wellness.",
-    "subtitle": "Expert Traditional Chinese Medicine care by Dr. Goh Sze Chin in the heart of Subang Jaya. Gentle, personalised treatments to help you feel like yourself again.",
+    "subtitle": "Expert Traditional Chinese Medicine care in the heart of Subang Jaya. Gentle, personalised treatments to help you feel like yourself again.",
     "ctaPrimary": "Book Appointment",
     "ctaSecondary": "View Our Services"
   },
@@ -20,16 +21,24 @@
     "title": "Meet Our Doctors",
     "subtitle": "Experienced practitioners dedicated to restoring balance through Traditional Chinese Medicine.",
     "experienceLabel": "Clinical practice",
-    "patientsLabel": "Across Malaysia",
     "specialtiesLabel": "Specialties",
     "goh": {
-      "name": "Dr. Goh Sze Chin",
-      "credentials": "Registered TCM Practitioner • Ministry of Health Malaysia",
-      "bio": "With over 15 years of dedicated clinical experience, Dr. Goh Sze Chin specialises in restoring the body’s natural harmony through Traditional Chinese Medicine. Her gentle approach combines classical acupuncture, therapeutic Tuina, and customised herbal prescriptions.\n\nPatients trust Dr. Goh for her deep listening, precise diagnosis, and unwavering commitment to treating the root cause — not just the symptoms. She has helped hundreds of individuals find lasting relief from chronic pain, stress-related conditions, women’s health concerns, and general wellness imbalances.",
-      "philosophy": "\"Healing happens when we treat the person, not just the illness. Every treatment is a conversation between the body and the practitioner.\"",
-      "experience": "15+ years experience",
-      "patients": "800+ patients treated",
-      "specialties": "Pain Management • Women’s Health • Stress & Sleep • Digestive Wellness"
+      "name": "Dr. Goh Sze Chin (Gwen)",
+      "credentials": "UTAR • Nanjing University of Chinese Medicine • Registered TCM Practitioner • Ministry of Health Malaysia",
+      "bio": "With over 10 years of dedicated clinical experience, Physician Gwen combines deep traditional knowledge with modern clinical practice. She holds a Bachelor’s degree from UTAR and a Master’s degree from the prestigious Nanjing University of Chinese Medicine.\n\nWhether you are dealing with chronic discomfort or looking to restore your body’s natural balance, Physician Gwen offers compassionate, personalised Traditional Chinese Medicine care tailored to your unique needs.",
+      "experience": "10+ years experience",
+      "specialtyItems": [
+        {
+          "title": "Pain Management",
+          "description": "Finding the root cause of your aches and restoring mobility.",
+          "icon": "pain"
+        },
+        {
+          "title": "Dermatology & Skin Health",
+          "description": "Natural relief for stubborn skin conditions, including eczema and chronic itchiness.",
+          "icon": "skin"
+        }
+      ]
     },
     "kow": {
       "name": "Dr. Kow Jaw Lin",
@@ -39,15 +48,18 @@
       "specialtyItems": [
         {
           "title": "Sports Injuries & Rehab",
-          "description": "Accelerating recovery, reducing inflammation, and getting you back to peak performance."
+          "description": "Accelerating recovery, reducing inflammation, and getting you back to peak performance.",
+          "icon": "sports"
         },
         {
           "title": "Advanced Pain Management",
-          "description": "Targeted relief for chronic joint, muscle, and nerve pain."
+          "description": "Targeted relief for chronic joint, muscle, and nerve pain.",
+          "icon": "pain-advanced"
         },
         {
           "title": "Digestive Wellness",
-          "description": "Restoring gut health, improving digestion, and treating issues like bloating and acid reflux through holistic body balancing."
+          "description": "Restoring gut health, improving digestion, and treating issues like bloating and acid reflux through holistic body balancing.",
+          "icon": "digestive"
         }
       ]
     }
@@ -82,6 +94,39 @@
       }
     ]
   },
+  "gallery": {
+    "title": "Our Team & Space",
+    "subtitle": "Meet our practitioners and get a feel for our calm clinic in Subang Jaya.",
+    "filters": {
+      "all": "All",
+      "team": "Team",
+      "clinic": "Reception"
+    },
+    "items": {
+      "team1": {
+        "caption": "Our team",
+        "alt": "Zen Pulse Clinic team photo"
+      },
+      "team2": {
+        "caption": "Our practitioners",
+        "alt": "Zen Pulse Clinic practitioners together"
+      },
+      "reception1": {
+        "caption": "Reception",
+        "alt": "Zen Pulse Clinic reception area in Subang Jaya"
+      },
+      "reception2": {
+        "caption": "Clinic space",
+        "alt": "Interior of Zen Pulse Clinic reception and waiting area"
+      },
+      "reception3": {
+        "caption": "Welcoming space",
+        "alt": "Zen Pulse Clinic welcoming reception space"
+      }
+    },
+    "empty": "No photos in this category yet.",
+    "clinicEmpty": "Clinic photos coming soon — visit us at Taipan Business Centre, USJ 10."
+  },
   "whyUs": {
     "title": "Why Patients Choose Zen Pulse",
     "items": [
@@ -108,44 +153,90 @@
     "viewAllOnGoogle": "View all reviews on Google",
     "items": [
       {
-        "quote": "After years of chronic lower back pain and seeing multiple specialists, Dr. Goh’s acupuncture and Tuina finally gave me lasting relief. I can now play with my grandchildren pain-free.",
-        "name": "Mrs. Lim, 62",
-        "role": "Retired teacher, Subang Jaya"
+        "quote": "Have been suffering from coughing for more than 6 years. Finally manage to find a TCM clinic opposite my office. So glad that manage to improve after the treatment. Thank you",
+        "name": "Kian Seng Yap",
+        "role": "Google Review"
       },
       {
-        "quote": "The facial rejuvenation treatments have made such a difference — my skin looks brighter and I feel more energised. Dr. Goh is incredibly knowledgeable and gentle.",
-        "name": "Ms. Tan, 38",
-        "role": "Marketing director"
+        "quote": "I highly recommend this clinic/TCM doctor! Whenever I suffer from leg pain or lumbar (lower back) spine pain, she is always the first person I think of. Her treatments are incredibly comprehensive—depending on my condition, she will do acupuncture, cupping, tuina (therapeutic massage), bloodletting, and moxibustion. Every time after a session, my entire body feels a massive weight lifted and completely relieved. She is truly a lifesaver!",
+        "name": "Michelle Ewe",
+        "role": "Google Review"
       },
       {
-        "quote": "I was struggling with insomnia and anxiety. The combination of acupuncture, moxibustion and custom herbs completely changed my sleep within three weeks. I’m so grateful.",
-        "name": "Mr. Ahmad, 45",
-        "role": "Engineer, USJ"
+        "quote": "Highly recommend this TCM clinic. I once had carpal tunnel and wrist pain for almost a year, after 3 sessions of acupuncture and therapy by Physician Gwen, I’m recovered and no more suffering. Recently, I also sprained my waist and just 2 sessions of acupuncture and cupping, I’m mobile as usual! The environment is also clean and comfortable.",
+        "name": "Michie Lim",
+        "role": "Google Review"
+      },
+      {
+        "quote": "I’ve visited Zen Pulse Acupuncture Medical Centre 3 times, and each experience has been wonderful. Dr Gwen attended to my issues with great care and professionalism. The moment I stepped into the clinic, I immediately felt a sense of calm and stillness, knowing that I was in good hands. Definitely highly recommended!",
+        "name": "Janes Ong",
+        "role": "Google Review"
+      },
+      {
+        "quote": "My mom and I have been regulars of Dr Goh. She’s highly trained and knowledgeable and genuinely cares for her patient. My mom used to take high blood pressure pills and since Dr Goh has been treating her, my mom is now BP free. Acupuncture and herbs are the best combination for fast results.",
+        "name": "Nik Amalina",
+        "role": "Google Review"
+      },
+      {
+        "quote": "I have been seeing Dr Gwen for many years for my health issues, and I am truly grateful for her excellent care. Her skills in acupuncture, cupping, gua sha, and tuina are incredible. Under her treatment, even my curved spine condition has shown significant improvement. I highly recommend Dr Gwen to anyone seeking quality TCM care.",
+        "name": "ck k",
+        "role": "Google Review"
+      },
+      {
+        "quote": "I came from Cheras all the way to Taipan to seek for Dr Gwen's advice. I went to other TCM, after treatment a bit of relief but still uncomfortable. Dr Gwen knows my root cause and treated my tight areas — I feel a lot better! I will definitely come back again even though it’s far.",
+        "name": "wong siew mun",
+        "role": "Google Review"
+      },
+      {
+        "quote": "Excellent treatment experience.",
+        "name": "Yong Chia Teck",
+        "role": "Google Review"
+      },
+      {
+        "quote": "Highly recommended, the doctor is very nice",
+        "name": "amanda hui",
+        "role": "Google Review"
       }
     ]
   },
   "booking": {
-    "title": "Book Your Appointment",
-    "subtitle": "Fill in your details and we'll open WhatsApp with your booking request ready to send.",
-    "form": {
-      "fullName": "Full Name",
-      "phone": "Phone Number (WhatsApp preferred)",
-      "email": "Email Address",
-      "service": "Service You're Interested In",
-      "preferredDate": "Preferred Date",
-      "preferredTime": "Preferred Time",
-      "notes": "Additional Notes or Concerns",
-      "submit": "Send via WhatsApp",
-      "submitting": "Opening WhatsApp..."
+    "title": "Book an appointment",
+    "subtitle": "Takes about a minute. We’ll open WhatsApp with your request ready to send.",
+    "sections": {
+      "contact": "Your details",
+      "appointment": "Appointment",
+      "notes": "Notes"
     },
-    "privacyNote": "Your details will be sent to the clinic via WhatsApp. Tap Send in WhatsApp to complete your request.",
-    "selectService": "Select a treatment",
-    "timeOptions": [
-      "9:00 AM", "9:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM",
-      "2:00 PM", "2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM", "4:30 PM", "5:00 PM"
-    ],
-    "successTitle": "WhatsApp Opened",
-    "successMessage": "Your booking details are ready in WhatsApp. Tap Send to submit your request — our team will reply within 2 hours during clinic hours.",
+    "form": {
+      "fullName": "Full name",
+      "phone": "Phone",
+      "email": "Email",
+      "service": "Service",
+      "preferredDate": "Date",
+      "preferredTime": "Time",
+      "notes": "Anything we should know?",
+      "optional": "optional",
+      "pickDate": "Choose a date",
+      "selectTime": "Choose a time",
+      "selectDateFirst": "Choose a date first",
+      "closedDay": "Clinic closed on this day",
+      "submit": "Continue on WhatsApp",
+      "submitting": "Opening WhatsApp…"
+    },
+    "placeholders": {
+      "fullName": "e.g. Siti Aminah",
+      "phone": "e.g. 012-345 6789",
+      "email": "e.g. you@email.com",
+      "notes": "Symptoms, goals, or preferred practitioner…"
+    },
+    "privacyNote": "You’ll review the message in WhatsApp before sending. We usually reply within 2 hours during clinic hours.",
+    "selectService": "Select a service",
+    "hoursHint": {
+      "weekday": "Mon–Fri: 9:30 AM – 7:00 PM",
+      "saturday": "Sat: 9:30 AM – 6:00 PM"
+    },
+    "successTitle": "WhatsApp opened",
+    "successMessage": "Your booking details are ready in WhatsApp. Tap Send to submit — our team will reply within 2 hours during clinic hours.",
     "errorMessage": "Something went wrong. Please try again or message us on WhatsApp directly."
   },
   "contact": {
@@ -159,7 +250,7 @@
     "openInGoogleMaps": "Open in Google Maps"
   },
   "footer": {
-    "tagline": "Restoring balance through compassionate Traditional Chinese Medicine since 2010.",
+    "tagline": "Restoring balance through compassionate Traditional Chinese Medicine since 2026.",
     "copyright": "© {year} Zen Pulse Acupuncture Medical Centre. All rights reserved.",
     "licensed": "Licensed by the Ministry of Health Malaysia"
   }
