@@ -9,7 +9,7 @@ A modern, calming website for a Traditional Chinese Medicine (TCM) clinic in Sub
 - **English-first** fully built experience (Traditional Chinese structure ready via next-intl)
 - Beautiful, calm design using the clinic's signature warm beige color (`#e5d5bf`)
 - Responsive navigation with mobile menu
-- Detailed doctor profile for Dr. Goh Sze Chin
+- Detailed doctor profile for TCM Physician Goh Sze Chin
 - Services showcase (Acupuncture, Tuina, Herbal Medicine, Cupping, Moxibustion, Facial Rejuvenation)
 - Trust-building sections (Why Us + Testimonials)
 - Fully functional **booking system**:
@@ -133,4 +133,4 @@ Private project for Zen Pulse Acupuncture Medical Centre.
 
 Built with care for patient trust and calm aesthetics. 🌿
 
-**Dr. Goh Sze Chin** — Subang Jaya, Malaysia
+**TCM Physician Goh Sze Chin** — Subang Jaya, Malaysia

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: "Zen Pulse Acupuncture Medical Centre",
     template: "%s | Zen Pulse Acupuncture",
   },
-  description: "Professional Traditional Chinese Medicine care in Subang Jaya, Malaysia. Acupuncture, Tuina, and holistic healing by Dr. Goh Sze Chin. Restore balance with personalised, compassionate TCM treatments.",
+  description: "Professional Traditional Chinese Medicine care in Subang Jaya, Malaysia. Acupuncture, Tuina, and holistic healing by TCM Physician Goh Sze Chin. Restore balance with personalised, compassionate TCM treatments.",
   keywords: [
     "acupuncture Subang Jaya",
     "Traditional Chinese Medicine Malaysia",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Zen Pulse Acupuncture Medical Centre" }],
   openGraph: {
     title: "Zen Pulse Acupuncture Medical Centre",
-    description: "Expert Traditional Chinese Medicine by Dr. Goh Sze Chin in Subang Jaya. Calm, personalised care for pain, stress, and holistic wellness.",
+    description: "Expert Traditional Chinese Medicine by TCM Physician Goh Sze Chin in Subang Jaya. Calm, personalised care for pain, stress, and holistic wellness.",
     images: [{ url: "/images/logo.jpg" }],
   },
 };

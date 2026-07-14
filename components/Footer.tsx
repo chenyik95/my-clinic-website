@@ -22,6 +22,12 @@ export function Footer() {
 
           <div className="text-white/75 space-y-1 md:text-right">
             <div>{t("licensed")}</div>
+            <div className="mt-3 space-y-0.5 text-white/65">
+              <div>{t("companyName")}</div>
+              <div className="tabular-nums tracking-wide">
+                {t("registrationNumber")}
+              </div>
+            </div>
           </div>
         </div>
       </div>

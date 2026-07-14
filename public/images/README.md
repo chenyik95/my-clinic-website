@@ -41,7 +41,7 @@ And in `messages/en.json` under `gallery.items`:
 
 ## Images Needed (replace these placeholders)
 - `hero.jpg` or similar – welcoming, calm treatment room or serene doctor portrait (hero background)
-- `doctor.jpg` – professional, warm headshot or 3/4 portrait of Dr. Goh Sze Chin
+- `doctor.jpg` – professional, warm headshot or 3/4 portrait of TCM Physician Goh Sze Chin
 - `acupuncture.jpg` – clean, calm acupuncture treatment scene
 - `clinic.jpg` – exterior or welcoming reception area
 - `treatment-*.jpg` – various treatment photos if you want richer service cards

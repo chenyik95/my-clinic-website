@@ -20,10 +20,11 @@
   "doctors": {
     "title": "Meet Our Doctors",
     "subtitle": "Experienced practitioners dedicated to restoring balance through Traditional Chinese Medicine.",
+    "role": "TCM Physician",
     "experienceLabel": "Clinical practice",
     "specialtiesLabel": "Specialties",
     "goh": {
-      "name": "Dr. Goh Sze Chin (Gwen)",
+      "name": "Goh Sze Chin (Gwen)",
       "credentials": "UTAR • Nanjing University of Chinese Medicine • Registered TCM Practitioner • Ministry of Health Malaysia",
       "bio": "With over 10 years of dedicated clinical experience, Physician Gwen combines deep traditional knowledge with modern clinical practice. She holds a Bachelor’s degree from UTAR and a Master’s degree from the prestigious Nanjing University of Chinese Medicine.\n\nWhether you are dealing with chronic discomfort or looking to restore your body’s natural balance, Physician Gwen offers compassionate, personalised Traditional Chinese Medicine care tailored to your unique needs.",
       "experience": "10+ years experience",
@@ -41,9 +42,9 @@
       ]
     },
     "kow": {
-      "name": "Dr. Kow Jaw Lin",
+      "name": "Kow Jaw Lin",
       "credentials": "Beijing University of Chinese Medicine • Registered TCM Practitioner • Ministry of Health Malaysia",
-      "bio": "Dr. Kow Jaw Lin brings roughly 20 years of dedicated clinical expertise to the Subang Jaya community. A graduate of the esteemed Beijing University of Chinese Medicine, he possesses a profound understanding of traditional healing techniques paired with decades of practical, hands-on patient care.\n\nWhether you are an athlete recovering from a setback or someone struggling with chronic stomach issues, Dr. Kow combines classical TCM with focused, personalised treatment plans to help you restore balance and lasting wellness.",
+      "bio": "Physician Kow Jaw Lin brings roughly 20 years of dedicated clinical expertise to the Subang Jaya community. A graduate of the esteemed Beijing University of Chinese Medicine, he possesses a profound understanding of traditional healing techniques paired with decades of practical, hands-on patient care.\n\nWhether you are an athlete recovering from a setback or someone struggling with chronic stomach issues, Physician Kow combines classical TCM with focused, personalised treatment plans to help you restore balance and lasting wellness.",
       "experience": "20+ years experience",
       "specialtyItems": [
         {
@@ -252,6 +253,8 @@
   "footer": {
     "tagline": "Restoring balance through compassionate Traditional Chinese Medicine since 2026.",
     "copyright": "© {year} Zen Pulse Acupuncture Medical Centre. All rights reserved.",
-    "licensed": "Licensed by the Ministry of Health Malaysia"
+    "licensed": "Licensed by the Ministry of Health Malaysia",
+    "companyName": "Zen Pulse Acupuncture Sdn. Bhd.",
+    "registrationNumber": "202501026858 (1628270-W)"
   }
 }
